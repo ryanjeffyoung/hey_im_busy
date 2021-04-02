@@ -1,5 +1,6 @@
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
+FROM tiangolo/uvicorn-gunicorn:python3.8
+WORKDIR /app/
 
-COPY ./app/ /app/app/
+COPY . /app/
 COPY requirements.txt . 
-RUN pip --no-cache-dir install -r requirements.txt
+RUN pip3 --no-cache-dir install -r requirements.txt
